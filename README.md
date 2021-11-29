@@ -1,2 +1,3 @@
-# My-Portfolio
-My first repository on GitHub
+# Responsiveness Update
+
+Updating the website to make it more responsive.
