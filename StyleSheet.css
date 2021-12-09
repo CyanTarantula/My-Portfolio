@@ -2,9 +2,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 300px;
+    width: fit-content;
+    max-width: 80vw;
     border: 2px solid yellow;
     padding: 50px;
+    overflow: auto;
 }
 body {
     background-color: black;
@@ -15,9 +17,9 @@ body {
 }
 #profile {
     object-fit: cover;
-    object-position: center 70%;
-    width: 100%;
-    height: 500px;
+    /* object-position: center 70%; */
+    width: 100vw;
+    height: 70vh;
 }
 #yash {
     color: #25d415;
@@ -113,6 +115,11 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+.hobbies img {
+    width: 30vmin;
+    height: 30vmin;
+    /* max-width: ; */
+}
 .music {
     background-color: rgba(40, 102, 83, 0.377);
     display: flex;
@@ -126,6 +133,32 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+.projects {
+    display: flex;
+    flex-direction: column;
+}
+#titaniumVault {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4cd7bb;
+    padding: 3px 0px 0px;
+}
+#hangman {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 3px 0px 0px;
+}
+.projectIcon {
+    width: 30vmin;
+    /* max-width: 25vmin; */
+    height: 30vmin;
+    /* max-height: 25vmin; */
 }
 .contact {
     align-items: center;
