@@ -1,19 +1,28 @@
-// import './App.css';
-// import Particles from "react-tsparticles";
-// // import { loadFull, tsparticles } from "tsparticles";
+import './App.css';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import "./assets/particles.json"
 
-// function HeroSection() {
-// 	return (
-// 		<div>
-// 			<div className="container">
-// 				<div className="glitch" data-text="Portfolio">Portfolio</div>
-// 				<div className="glow">Portfolio</div>
-// 				<p className="subtitle">Engineer﹒Gamer﹒Explorer</p>
-// 			</div>
-// 			<div className="scanlines"></div>
-// 		</div>
-// 	)
-// }
+function HeroSection() {
+	return (
+		<div>
+			<div className="container">
+				<div className="glitch" data-text="Portfolio">Portfolio</div>
+				<div className="glow">Portfolio</div>
+				<p className="subtitle">Engineer﹒Gamer﹒Explorer</p>
+			</div>
+			{/* <div className="scanlines"></div> */}
+		</div>
+	)
+}
+
+function Introduction() {
+	return (
+		<div className='intro'>
+			<h3>Hi There! I am Yash Bhargava</h3>
+		</div>
+	)
+}
 
 // // particlesJS.load('particles-js', 'assets/particles.json', function() {
 // // 	console.log('callback - particles.js config loaded');
@@ -67,9 +76,6 @@
 // }
 
 // export default App;
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import "./assets/particles.json"
 
 const App = () => {
   const particlesInit = async (main) => {
@@ -86,119 +92,123 @@ const App = () => {
   };
   return (
 	  	<div>
-		  <p>Hey there!!!</p>
 			<Particles
 				id="tsparticles"
+				style={{
+					
+				}}
 				init={particlesInit}
 				loaded={particlesLoaded}
 				options={{
-				background: {
-					color: {
-					value: "#232741",
-					},
-				},
-				fpsLimit: 120,
-				interactivity: {
-					detect_on: "canvas",
-					events: {
-						onClick: {
-							enable: true,
-							mode: "push",
-						},
-						onHover: {
-							enable: true,
-							mode: "bubble",
-						},
-						resize: true,
-					},
-					modes: {
-						push: {
-							quantity: 4,
-						},
-						repulse: {
-							distance: 400,
-							duration: 0.4,
-						},
-						bubble: {
-							distance: 250,
-							size: 8,
-							duration: 2,
-							opacity: 1,
-							speed: 3
+					background: {
+						color: {
+						value: "#232741",
 						},
 					},
-				},
-				particles: {
-					color: {
-					value: "#ffffff",
+					fpsLimit: 120,
+					interactivity: {
+						detect_on: "canvas",
+						events: {
+							onClick: {
+								enable: true,
+								mode: "push",
+							},
+							onHover: {
+								enable: true,
+								mode: "bubble",
+							},
+							resize: true,
+						},
+						modes: {
+							push: {
+								quantity: 4,
+							},
+							repulse: {
+								distance: 400,
+								duration: 0.4,
+							},
+							bubble: {
+								distance: 250,
+								size: 8,
+								duration: 2,
+								opacity: 1,
+								speed: 3
+							},
+						},
 					},
-					links: {
-					color: "#ffffff",
-					distance: 150,
-					enable: false,
-					opacity: 0.4,
-					width: 1,
-					},
-					collisions: {
-					enable: false,
-					},
-					move: {
-					direction: "none",
-					enable: true,
-					outModes: {
-						default: "out",
-					},
-					random: true,
-					speed: 1,
-					straight: false,
-					bounce: false,
-					attract: {
+					particles: {
+						color: {
+						value: "#ffffff",
+						},
+						links: {
+						color: "#ffffff",
+						distance: 150,
 						enable: false,
-						rotateX: 600,
-						rotateY: 600
-					}
-					},
-					number: {
-					density: {
+						opacity: 0.4,
+						width: 1,
+						},
+						collisions: {
+						enable: false,
+						},
+						move: {
+						direction: "none",
 						enable: true,
-						area: 800,
-					},
-					value: 100,
-					},
-					opacity: {
-					value: 1,
-					random: true,
-					anim: {
-						enable: true,
+						outModes: {
+							default: "out",
+						},
+						random: true,
 						speed: 1,
-						opacity_min: 0,
-						sync: false,
+						straight: false,
+						bounce: false,
+						attract: {
+							enable: false,
+							rotateX: 600,
+							rotateY: 600
+						}
+						},
+						number: {
+						density: {
+							enable: true,
+							area: 800,
+						},
+						value: 100,
+						},
+						opacity: {
+						value: 1,
+						random: true,
+						anim: {
+							enable: true,
+							speed: 1,
+							opacity_min: 0,
+							sync: false,
+						},
+						},
+						shape: {
+						type: "circle",
+						stroke: {
+							width: 0,
+							color: "#000000"
+						},
+						polygon: {
+							sides: 5,
+						},
+						},
+						size: {
+						value: 3,
+						random: true,
+						anim: {
+							enable: false,
+							speed: 4,
+							size_min: 0.3,
+							sync: false,
+						},
+						},
 					},
-					},
-					shape: {
-					type: "circle",
-					stroke: {
-						width: 0,
-						color: "#000000"
-					},
-					polygon: {
-						sides: 5,
-					},
-					},
-					size: {
-					value: 3,
-					random: true,
-					anim: {
-						enable: false,
-						speed: 4,
-						size_min: 0.3,
-						sync: false,
-					},
-					},
-				},
-				detectRetina: true,
+					detectRetina: true,
 				}}
 			/>
+			<HeroSection />
+			<Introduction />
 	  	</div>
   );
 };

@@ -2,13 +2,15 @@
 	text-align: center;
 }
 
-/* body {
-	background: #232741;
-} */
+#tsparticles {
+	position: fixed;
+	width: 100%;
+	z-index: -1 !important;
+}
 
-.MyText {
+.intro {
 	color: white;
-	margin: 40vh 0;
+	margin: 40vh 10px 0;
 }
 
 .container {
@@ -24,7 +26,8 @@
 .glow {
 	color: #49ddf1;
 	position: relative;
-	font-size: 9vw;
+	font-size: 15vmin;
+	/* font-size: xxx-large; */
 	animation: glitch 5s 5s infinite;
 }
 
@@ -346,7 +349,7 @@
 .subtitle {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 200;
-	font-size: 1vw;
+	font-size: 2vmin;
 	color: rgba(30, 193, 225, 0.4);
 	text-transform: uppercase;
 	letter-spacing: 1em;
