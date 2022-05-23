@@ -1,0 +1,16 @@
+.Skills {
+    box-sizing: border-box;
+	color: white;
+    width: 100%;
+    padding: 20px;
+    margin: 500px 0;
+    border: 5px solid orange;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #0d0f1ca9;
+}

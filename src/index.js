@@ -4,11 +4,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const t0 = performance.now();
+
+function renderCallback(e) {
+  // document.querySelector(".loader-container").style.display = "none"
+  console.log("Rendering done?", e);
+  const t1 = performance.now();
+
+  console.log(`Mount took ~${(t1 - t0) / 1000} seconds.`);
+}
+
+// const rootElement = document.getElementById("root");
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+//   rootElement,
+//   renderCallback
+// );
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  // renderCallback()
 );
 
 // If you want to start measuring performance in your app, pass a function
