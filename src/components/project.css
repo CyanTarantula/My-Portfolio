@@ -1,0 +1,97 @@
+.project {
+    margin: 20vh 10vw 10vh;
+    height: 70vh;
+    padding: 20px;
+    /* background-color: #ffffff10; */
+
+    background: radial-gradient(100% 20% at bottom, transparent 50%, #ffffff10 0%) bottom,
+                radial-gradient(100% 20% at top, transparent 50%, #ffffff10 0%) top;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 80vw; */
+}
+
+.project-img-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 30vw;
+}
+
+.project-title {
+    font-size: 6vmin;
+    color: #66fcf1;
+}
+
+.project-img > img {
+    width: 20vw;
+}
+
+.project-description-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: calc(80vw - 30vw - 10vw - 2*20px);
+}
+
+.project-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-description-title {
+    font-size: 5vmin;
+    font-weight: bold;
+    color: #45a29e;
+}
+
+.project-description-content {
+    font-size: 3vmin;
+    color: #c5c6c7;
+    margin: 5px 0;
+    width: 80%;
+}
+
+.project-button {
+    border-radius: 5px;
+    /* padding: 5px 10px; */
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+    
+}
+
+.project-button > a {
+    text-decoration: none;
+}
+
+.project-button-download {
+    background-color: #66fcf1;
+    color: #1f2833;
+    padding: 5px 10px;
+}
+
+.project-button-link {
+    background-color: #66fcf1;
+    color: #1f2833;
+    padding: 5px 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.project-button-link > img {
+    width: 20px;
+    padding-right: 5px;
+}

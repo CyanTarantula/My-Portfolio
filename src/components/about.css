@@ -1,0 +1,110 @@
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10vw;
+    position: relative;
+    height: 80vh;
+}
+
+.left-section {
+    z-index: 3;
+    width: 50%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-section {
+    width: 50%;
+}
+
+.about-heading {
+    color: #45A29E;
+    text-shadow: 2px 2px 2px #29625f;
+    font-size: 10vmin;
+}
+
+.left-mid-section {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-content {
+    color: #C5C6C7;
+    font-size: 3vmin;
+    text-shadow: 2px 2px #0B0C10;
+    /* width: 50vw; */
+}
+
+.about-resume > a {
+    color: #66fcf1;
+    text-decoration: none;
+    font-size: 3vmin;
+}
+
+/* .about-contacts {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+} */
+
+#myImage {
+    position: absolute;
+    right: 0;
+    /* top: 0; */
+    margin-top: 10vh;
+    /* margin-left: 50vw; */
+    margin-right: 10vw;
+    height: 80vh;
+    clip-path: circle(70.0% at 70% 50%);
+    /* border-radius: 50% 0 0 50%; */
+}
+
+.gradient-my-image {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    /* top: 0; */
+    margin-top: 10vh;
+    margin-right: 10vw;
+    width: 80vh;
+    height: 80vh;
+    clip-path: circle(70.0% at 70% 50%);
+    background: linear-gradient(to right, hsla(176, 43%, 39%, 0.5) , hsla(0, 0%, 100%, 0));
+}
+
+/* Style all font awesome icons */
+.fa {
+    margin: 0 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: #1F2833;
+    color: white;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    color: #66fcf1;
+    background: #1f2833b1;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+/* .fa-facebook {
+    background: #1F2833;
+    color: white;
+} */
