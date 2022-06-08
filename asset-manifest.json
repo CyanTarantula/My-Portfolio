@@ -1,29 +1,25 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.fdb6c08a.css",
-    "main.js": "/My-Portfolio/static/js/main.80ee83fc.js",
+    "main.js": "/My-Portfolio/static/js/main.6fb8dde0.js",
     "static/js/787.1297335f.chunk.js": "/My-Portfolio/static/js/787.1297335f.chunk.js",
     "static/media/Hangman Game v1.2 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Hangman Game v1.2 (By Yash Bhargava).49cd996d43284d058724.zip",
     "static/media/Titanium Vault v1.1 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Titanium Vault v1.1 (By Yash Bhargava).5b7a7618c28529913f4e.zip",
     "static/media/Linkedin_PFP_Square_1-compressed.jpg": "/My-Portfolio/static/media/Linkedin_PFP_Square_1-compressed.3d2a27d3c605b21a6105.jpg",
-    "static/media/About.png": "/My-Portfolio/static/media/About.39e60c525f87f456e376.png",
     "static/media/space1-compressed.png": "/My-Portfolio/static/media/space1-compressed.3832516312ffe02fa639.png",
     "static/media/space2-compressed.png": "/My-Portfolio/static/media/space2-compressed.1bdd208e8b06869f1222.png",
     "static/media/python-compressed.png": "/My-Portfolio/static/media/python-compressed.45680a8358cfe65cc3ac.png",
-    "static/media/skills.png": "/My-Portfolio/static/media/skills.ef7589c4eeee690cd708.png",
     "static/media/KorporiaLogo-compressed.jpg": "/My-Portfolio/static/media/KorporiaLogo-compressed.93851840bb864168927e.jpg",
     "static/media/Titanium_Vault_Logo-compressed.jpg": "/My-Portfolio/static/media/Titanium_Vault_Logo-compressed.d5b0dbe3c8317855cd8f.jpg",
-    "static/media/Contact.png": "/My-Portfolio/static/media/Contact.b9d124315401b4ce3e62.png",
+    "static/media/About-compressed.png": "/My-Portfolio/static/media/About-compressed.41405e1fef3b2da1b0b8.png",
     "static/media/contact2-compressed.jpg": "/My-Portfolio/static/media/contact2-compressed.8e82737b7d21731bf0f4.jpg",
-    "static/media/project.png": "/My-Portfolio/static/media/project.a18155eade7f52c29e47.png",
-    "static/media/home.png": "/My-Portfolio/static/media/home.2de0ad33a713365572b3.png",
     "index.html": "/My-Portfolio/index.html",
     "main.fdb6c08a.css.map": "/My-Portfolio/static/css/main.fdb6c08a.css.map",
-    "main.80ee83fc.js.map": "/My-Portfolio/static/js/main.80ee83fc.js.map",
+    "main.6fb8dde0.js.map": "/My-Portfolio/static/js/main.6fb8dde0.js.map",
     "787.1297335f.chunk.js.map": "/My-Portfolio/static/js/787.1297335f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fdb6c08a.css",
-    "static/js/main.80ee83fc.js"
+    "static/js/main.6fb8dde0.js"
   ]
 }
