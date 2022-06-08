@@ -24,13 +24,14 @@
 }
 
 .contact-title {
-    font-size: 5vmin;
-    font-weight: 600;
+    font-size: 6vmin;
+    font-weight: bold;
     color: #66fcf1;
 }
 
 .contact-mail {
-    font-size: 3vmin;
+    font-size: 4vmin;
+    font-weight: 600;
     color: #c5c6c7;
     margin: 5px 0;
 }

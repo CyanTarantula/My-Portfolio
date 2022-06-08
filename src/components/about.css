@@ -6,6 +6,7 @@
     margin: 10px 10vw;
     position: relative;
     height: 80vh;
+    width: 80vw;
 }
 
 .left-section {
@@ -25,7 +26,7 @@
 .about-heading {
     color: #45A29E;
     text-shadow: 2px 2px 2px #29625f;
-    font-size: 10vmin;
+    font-size: max(10vmin, 5*10px);
 }
 
 .left-mid-section {
@@ -38,7 +39,7 @@
 
 .about-content {
     color: #C5C6C7;
-    font-size: 3vmin;
+    font-size: max(3vmin, 5*3px);
     text-shadow: 2px 2px #0B0C10;
     /* width: 50vw; */
 }
@@ -46,7 +47,7 @@
 .about-resume > a {
     color: #66fcf1;
     text-decoration: none;
-    font-size: 3vmin;
+    font-size: max(3vmin, 5*3px);
 }
 
 /* .about-contacts {
@@ -64,7 +65,7 @@
     margin-top: 10vh;
     /* margin-left: 50vw; */
     margin-right: 10vw;
-    height: 80vh;
+    height: 80vmin;
     clip-path: circle(70.0% at 70% 50%);
     /* border-radius: 50% 0 0 50%; */
 }
@@ -84,10 +85,17 @@
 
 /* Style all font awesome icons */
 .fa {
-    margin: 0 10px;
+    /* margin: 0 10px;
     padding: 20px;
     font-size: 30px;
-    width: 30px;
+    width: 30px; */
+
+    margin: 0 max(1vw, 5*1px);
+    padding: max(1vw, 5*1px);
+    /* padding: auto; */
+    font-size: max(5vmin, 5*5px);
+    width: max(5vmin, 5*5px);
+
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
@@ -108,3 +116,94 @@
     background: #1F2833;
     color: white;
 } */
+
+@media screen 
+    and (max-width: 900px)
+{
+    .about {
+        margin: 10px 5vw;
+    }
+
+    #myImage {
+        margin-right: 5vw;
+    }
+
+    .gradient-my-image {
+        margin-right: 5vw;
+    }
+}
+
+@media screen 
+    and (max-width: 600px)
+{
+    #myImage {
+        clip-path: none;
+        border-radius: 50%;
+    }
+
+    .gradient-my-image {
+        display: none;
+    }
+}
+
+@media screen 
+    and (max-width: 600px)
+    and (orientation: portrait)
+{
+    .about {
+        margin-top: calc(80vmin + 2 * 10px);
+    }
+    #myImage {
+        top: 0;
+        height: 90vmin;
+        margin-top: 10px;
+        margin-right: 5vw;
+        right: 0;
+    }
+    .about-heading {
+        display: none;
+    }
+    .left-section {
+        height: calc(100vh - 90vmin - 10px);
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .left-mid-section {
+        height: 100%;
+        justify-content: space-around;
+    }
+    /* .about-contacts {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    } */
+    .right-section {
+        width: 0;
+    }
+}
+
+@media screen
+    and (max-height: 400px)
+{
+    .about {
+        height: 90vh;
+    }
+
+    .left-section {
+        height: 100%;
+    }
+
+    .left-mid-section {
+        height: 50%;
+    }
+}
+
+@media screen 
+    and (max-height: 300px) 
+{
+    .about-heading {
+        display: none;
+    }
+}

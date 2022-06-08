@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 1000;
     left: 0;
-    top: calc(50vh - (5 * 50px + (5+1) * 10px)/2);
+    top: calc(50vh - (5 * 50px + (5 + 1) * 10px)/2);
     width: calc(8vw + 5px);
     max-width: calc(100px + 5px);
     /* height: calc(4 * 50px + 3 * 10px); */
@@ -74,6 +74,12 @@ li.NavBtn > img {
 }
 
 @media (max-width: 900px) {
+    #Navbar {
+        display: none;
+    }
+}
+
+@media (max-height: 400px) {
     #Navbar {
         display: none;
     }

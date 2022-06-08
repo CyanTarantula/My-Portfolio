@@ -4,16 +4,16 @@
     margin: 30vh auto; */
     display: flex;
     flex-direction: column;
-    margin: 30vh auto;
+    margin: 40vh auto;
 }
 
 .intro-heading {
-    font-size: 4vmin;
+    font-size: max(4vmin, 20px);
     color: #25a29e;
 }
 
 .intro-text {
-    font-size: 10vmin;
+    font-size: max(10vmin, 50px);
     font-weight: bold;
     color: #66fcf1;
 }

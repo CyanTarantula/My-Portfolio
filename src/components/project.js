@@ -49,12 +49,17 @@ function getProjectImage(props) {
 function Project(props) {
     return (
         <div className='project'>
-            <div className='project-img-title'>
-                <div className='project-title'>
-                    {props.projectTitle}
+            <div>
+                <div className='project-img-title'>
+                    <div className='project-title'>
+                        {props.projectTitle}
+                    </div>
+                    <div className='project-img'>
+                        {getProjectImage(props)}
+                    </div>
                 </div>
-                <div className='project-img'>
-                    {getProjectImage(props)}
+                <div className='project-btn-responsive'>
+                    {getProjectButton(props)}
                 </div>
             </div>
             <div className='project-description-button'>

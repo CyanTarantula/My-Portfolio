@@ -12,7 +12,7 @@ function Skill(props) {
             <div className='SkillImg'>
                 <img src={props.imgFile} alt="Logo for skill"></img>
             </div>
-            <div>{props.skillName}</div>
+            <div className='SkillName'>{props.skillName}</div>
         </div>
     )
 }

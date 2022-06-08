@@ -19,7 +19,7 @@ import HangmanGameFile from './assets/ProjectFiles/Hangman Game v1.2 (By Yash Bh
 
 import spaceBg1 from './assets/Images/space1.png'
 import spaceBg2 from './assets/Images/space2.png'
-import contactBg from './assets/Images/contact.jpg'
+import contactBg from './assets/Images/contact2.jpg'
 
 const homePageTop = 0, 
 	aboutPageTop = 0.58, 
@@ -120,91 +120,111 @@ function scrollHorizontally(e) {
 		// document.querySelector('.App').addEventListener('wheel', onlyOverall, {passive: false})
 	}
 	else {
-		midEle.scrollLeft -= (delta * 100);
+		var val = (window.innerWidth) / 10;
+		midEle.scrollLeft -= (delta * val);
 		// console.log("Scrolling through projects")
 	}
 }
+
+var lastY;
 
 async function initVerRefOnWheel(e) {
 	const topEle = document.querySelector('.initial-vertical-scroll')
 	const midEle = document.querySelector('.mid-horizontal-scroll')
 	const overallEle = document.querySelector('.overall-vertical-scroll')
-
-	// topEle.addEventListener('wheel', () => {console.log('Scroll detected on initial vertical div')})
-	// console.log('initVerScroll: ', topEle.scrollTop)
-	// console.log('midHorScroll: ', midEle.scrollLeft)
-	// var orgE = e
-	e = window.event || e;
 	
-	var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+	// console.log("Event: ", e)
 	// console.log(delta)
 
-	// When scrolling down to projects from skills
-	if (
-		(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
-		&& (midEle.scrollLeft === 0) 
-		&& (delta < 0)
-	) {
-		// console.log("scrolling down to projects from skills")
-		topEle.addEventListener('wheel', scrollStopper, {passive: false})
-		midEle.addEventListener('wheel', scrollHorizontally, {passive: false})
-		topEle.classList.add('toggleOverallScroll')
+	if (window.matchMedia("(hover: hover)").matches) {
+		e = window.event || e;
+		
+		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+		// When scrolling down to projects from skills
+		if (
+			(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
+			&& (midEle.scrollLeft === 0) 
+			&& (delta < 0)
+		) {
+			// console.log("scrolling down to projects from skills")
+			topEle.addEventListener('wheel', scrollStopper, {passive: false})
+			midEle.addEventListener('wheel', scrollHorizontally, {passive: false})
+			topEle.classList.add('toggleOverallScroll')
+		}
+
+		// When scrolling to end of projects and scrolling downwards
+		if (
+			(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
+			&& (overallEle.scrollTop === 0)
+			&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
+			&& (delta < 0)
+		) {
+			// console.log("scrolling to end of projects and scrolling downwards")
+			// midEle.scrollLeft -= (delta * 100);
+			topEle.classList.remove('toggleOverallScroll')
+			topEle.style.overflowY = 'hidden'
+
+			topEle.removeEventListener('wheel', scrollStopper, {passive: false})
+			midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
+
+			// topEle.addEventListener('wheel', holdTopVert, {passive: false})
+			// midEle.addEventListener('wheel', holdTopVert, {passive: false})
+
+			// overallEle.addEventListener('wheel', onlyOverall, {passive: false})
+
+			// div.addEventListener('wheel', onlyOverall, true)
+		}
+
+		// When scrolling up to projects from contact
+		if (
+			(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
+			&& (overallEle.scrollTop === 0)
+			&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
+			&& (delta > 0)
+		) {
+			// console.log("scrolling up to projects from contact")
+			// topEle.removeEventListener('wheel', holdTopVert, {passive: false})
+			// midEle.removeEventListener('wheel', holdTopVert, {passive: false})
+
+			// overallEle.removeEventListener('wheel', onlyOverall, {passive: false})
+			// div.removeEventListener('wheel', onlyOverall, true)
+
+			topEle.addEventListener('wheel', scrollStopper, {passive: false})
+			midEle.addEventListener('wheel', scrollHorizontally, {passive: false})
+			topEle.classList.add('toggleOverallScroll')
+		}
+
+		// When scolling to beginning of projects and scrolling upwards
+		if (
+			(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
+			&& (midEle.scrollLeft === 0) 
+			&& (delta > 0)
+		) {
+			// console.log("scolling to beginning of projects and scrolling upwards")
+			topEle.removeEventListener('wheel', scrollStopper, {passive: false})
+			midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
+
+			// topEle.classList.remove('toggleInitialScroll')
+			topEle.style.overflowY = 'visible'
+		}
 	}
-
-	// When scrolling to end of projects and scrolling downwards
-	if (
-		(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
-		&& (overallEle.scrollTop === 0)
-		&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
-		&& (delta < 0)
-	) {
-		// console.log("scrolling to end of projects and scrolling downwards")
-		// midEle.scrollLeft -= (delta * 100);
-		topEle.classList.remove('toggleOverallScroll')
-		topEle.style.overflowY = 'hidden'
-
-		topEle.removeEventListener('wheel', scrollStopper, {passive: false})
-		midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
-
-		// topEle.addEventListener('wheel', holdTopVert, {passive: false})
-		// midEle.addEventListener('wheel', holdTopVert, {passive: false})
-
-		// overallEle.addEventListener('wheel', onlyOverall, {passive: false})
-
-		// div.addEventListener('wheel', onlyOverall, true)
-	}
-
-	// When scrolling up to projects from contact
-	if (
-		(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
-		&& (overallEle.scrollTop === 0)
-		&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
-		&& (delta > 0)
-	) {
-		// console.log("scrolling up to projects from contact")
-		// topEle.removeEventListener('wheel', holdTopVert, {passive: false})
-		// midEle.removeEventListener('wheel', holdTopVert, {passive: false})
-
-		// overallEle.removeEventListener('wheel', onlyOverall, {passive: false})
-		// div.removeEventListener('wheel', onlyOverall, true)
-
-		topEle.addEventListener('wheel', scrollStopper, {passive: false})
-		midEle.addEventListener('wheel', scrollHorizontally, {passive: false})
-		topEle.classList.add('toggleOverallScroll')
-	}
-
-	// When scolling to beginning of projects and scrolling upwards
-	if (
-		(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
-		&& (midEle.scrollLeft === 0) 
-		&& (delta > 0)
-	) {
-		// console.log("scolling to beginning of projects and scrolling upwards")
-		topEle.removeEventListener('wheel', scrollStopper, {passive: false})
-		midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
-
-		// topEle.classList.remove('toggleInitialScroll')
-		topEle.style.overflowY = 'visible'
+	else {
+		console.log("topEle.scrollTop: ", topEle.scrollTop, " window.innerHeight: ", window.innerHeight, " topEle.scrollHeight: ", topEle.scrollHeight)
+		var currentY = e.touches[0].clientY
+		console.log("CurrentY: ", currentY, " ", currentY < lastY)
+		if (Math.ceil(topEle.scrollTop + window.innerHeight) >= Math.floor(topEle.scrollHeight) && currentY < lastY) {
+			topEle.style.overflowY = 'hidden'
+			console.log("Reached projects from skills")
+		}
+		else if (
+			Math.ceil(topEle.scrollTop + window.innerHeight) >= Math.floor(topEle.scrollHeight)
+			&& currentY > lastY
+			&& overallEle.scrollTop === 0
+		) {
+			topEle.style.overflowY = 'visible'
+			console.log("Reached projects from contact")
+		}
+		lastY = currentY
 	}
 }
 
@@ -282,7 +302,10 @@ function App() {
 
 	const scrollToProject = async (to) => {
 		if (mid_hor_ref.current) {
-			if (isNaN(to)) {
+			if (to === "left") {
+				currentProject = (currentProject - 1 + numOfProjects) % numOfProjects
+			}
+			else if (isNaN(to)) {
 				// console.log("Scrolling to next project, current project: ", currentProject)
 				currentProject = (currentProject + 1) % numOfProjects
 				// console.log("Scrolled to project: ", currentProject)
@@ -291,6 +314,7 @@ function App() {
 				// console.log("Scrolling to project ", to+1)
 				currentProject = to
 			}
+			// console.log(currentProject)
 			mid_hor_ref.current.scrollTo(currentProject)
 		}
 	}
@@ -318,10 +342,21 @@ function App() {
 
 	useEffect(() => {
 		const div = innerRef.current
-		div.addEventListener('wheel', initVerRefOnWheel, {passive: false})
+		if (window.matchMedia("(hover: hover)").matches) {
+			div.addEventListener('wheel', initVerRefOnWheel, {passive: false})
+		}
+		else {
+			console.log("Touch device detected")
+			div.addEventListener('touchmove', initVerRefOnWheel, {passive: true})
+		}
 
 		return () => {
-			div.removeEventListener('wheel', initVerRefOnWheel, {passive: false})
+			if (window.matchMedia("(hover: hover)").matches) {
+				div.removeEventListener('wheel', initVerRefOnWheel, {passive: false})
+			}
+			else {
+				div.removeEventListener('touchmove', initVerRefOnWheel, {passive: true})
+			}
 		}
 	})
 	
@@ -439,7 +474,8 @@ function App() {
 							>
 								{/* Section Heading */}
 								<ParallaxLayer
-									sticky={{start: 0, end: 2}}
+									className='project-section-heading'
+									sticky={{start: 0, end: numOfProjects}}
 									style={{
 										color: '#66fcf1',
 										// color: '#0b0c10',
@@ -460,7 +496,16 @@ function App() {
 								
 								{/* Project navigation arrows */}
 								<ParallaxLayer
-									sticky={{start: 0, end: 2}}
+									sticky={{start: 0, end: numOfProjects}}
+									style={{
+										display: 'flex',
+										alignItems: 'center',
+										justifyContent: 'flex-end',
+										height: '100vh',
+										width: '100vw',
+										pointerEvents: 'none',
+										// marginLeft: 'auto',
+									}}
 								>
 									<div 
 										className='project-nav-arrows'
@@ -470,6 +515,28 @@ function App() {
 									</div>
 								</ParallaxLayer>
 								
+
+								{/* Project navigation arrows */}
+								<ParallaxLayer
+									sticky={{start: 0, end: numOfProjects}}
+									style={{
+										display: 'flex',
+										alignItems: 'center',
+										justifyContent: 'flex-start',
+										height: '100vh',
+										width: '100vw',
+										pointerEvents: 'none',
+										// marginLeft: 'auto',
+									}}
+								>
+									<div 
+										className='project-nav-arrows'
+										onClick={() => {scrollToProject('left')}}
+									>
+										<div className='arrow left'></div>
+									</div>
+								</ParallaxLayer>
+
 									{/* Projects */}
 								<ParallaxLayer
 									offset={0}
@@ -477,7 +544,7 @@ function App() {
 								>
 									<Project 
 										projectTitle="Fruits 360"
-										projectLink={'https://fruits360.herokuapp.com/'}
+										projectLink={'https://fruits-360.herokuapp.com/'}
 										projectDescription="The website demonstrates a CNN model predicting the image of a fruit taken from any angle. The model is trained on the Kaggle Fruits 360 Dataset. The website is built with React and Flask."
 									/>
 								</ParallaxLayer>
@@ -508,7 +575,7 @@ function App() {
 									/>
 								</ParallaxLayer>
 
-									{/* Background Images */}
+									{/* Project Background */}
 								<ParallaxLayer 
 									offset={0}
 									speed={0}
@@ -521,11 +588,13 @@ function App() {
 										// backgroundSize: '100vw 100vh',
 										// backgroundRepeat: 'repeat-x',
 										
-										backgroundImage: `
-											linear-gradient(
+										backgroundImage: 
+											`linear-gradient(
 											rgba(11, 12, 16, 0.3), 
 											rgba(11, 12, 16, 0.3)
-											),url(${spaceBg2})`,
+											),`
+											+
+											`url(${spaceBg2})`,
 										backgroundRepeat: 'repeat',
 
 										zIndex: '-1',
@@ -534,7 +603,7 @@ function App() {
 							</Parallax>
 						</ParallaxLayer>
 
-						{/* Background Images */}
+						{/* Top Background */}
 						<ParallaxLayer 
 							offset={0}
 							speed={0.1}
@@ -545,11 +614,13 @@ function App() {
 								// backgroundSize: '100vw',
 								// backgroundImage: `url(https://img.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg?t=st=1654369142~exp=1654369742~hmac=74dc7c66451ab64d5a46dfa1509336a1fe56d6b51620dbc97dd4f4de3052c5bb&w=900)`,
 								// backgroundRepeat: 'repeat-y',
-								backgroundImage: `
-									linear-gradient(
+								backgroundImage: 
+									`linear-gradient(
 									rgba(11, 12, 16, 0.5), 
 									rgba(11, 12, 16, 0.5)
-									),url(${spaceBg1})`,
+									),`
+									+
+									`url(${spaceBg1})`,
 								backgroundRepeat: 'repeat',
 								// backgroundSize: '100vw',
 								zIndex: '-1',
@@ -577,6 +648,7 @@ function App() {
 					<Contact />
 				</ParallaxLayer>
 
+				{/* Contact Background */}
 				<ParallaxLayer 
 					offset={1}
 					factor={1}
