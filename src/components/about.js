@@ -17,7 +17,7 @@ function About() {
                         and currently pursuing my B.Tech in Artificial Intelligence and Data Science.
                     </div>
                     <div className='about-resume'>
-                        <a href="https://docs.google.com/viewerng/viewer?url=https://github.com/CyanTarantula/resume/raw/main/Resume.pdf+" target='_blank' rel='noopener noreferrer'>Checkout my resume</a>
+                        <a href="https://drive.google.com/file/d/1r2um31IpmQmaBr1p-NkbE7ywfAoqhuEK/view?usp=sharing" target='_blank' rel='noopener noreferrer'>Checkout my resume</a>
                     </div>
                 </div>
                 <div className='left-bottom-section'>

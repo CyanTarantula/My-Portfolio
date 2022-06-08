@@ -1,7 +1,7 @@
 import './project.css'
 
-import WebsiteImg from '../assets/Images/website.png'
-import defaultProjectImg from '../assets/NavbarImages/project.png'
+import WebsiteImg from '../assets/Images/website-compressed.png'
+import defaultProjectImg from '../assets/NavbarImages/project-compressed.png'
 
 function getProjectButton(props) {
     if (props.download === true) {
@@ -16,7 +16,6 @@ function getProjectButton(props) {
         )
     }
     else {
-        // console.log(props.projectLink)
         return (
             <div className='project-button'>
                 <a href={props.projectLink}>

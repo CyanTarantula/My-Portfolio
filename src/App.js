@@ -11,15 +11,17 @@ import Skills from './components/skill.js';
 import Project from './components/project.js';
 import Contact from './components/contact.js';
 
-import TitaniumVaultImg from './assets/ProjectImages/Titanium_Vault_Icon.ico'
+import TitaniumVaultImg from './assets/ProjectImages/Titanium_Vault_Logo-compressed.jpg'
 import TitaniumVaultFile from './assets/ProjectFiles/Titanium Vault v1.1 (By Yash Bhargava).zip'
 
-import HangmanGameImg from './assets/ProjectImages/Hangman_Game_Icon2.png'
+import HangmanGameImg from './assets/ProjectImages/Hangman_Game_Icon2-compressed.png'
 import HangmanGameFile from './assets/ProjectFiles/Hangman Game v1.2 (By Yash Bhargava).zip'
 
-import spaceBg1 from './assets/Images/space1.png'
-import spaceBg2 from './assets/Images/space2.png'
-import contactBg from './assets/Images/contact2.jpg'
+import KorporiaImg from './assets/ProjectImages/KorporiaLogo-compressed.jpg'
+
+import spaceBg1 from './assets/Images/space1-compressed.png'
+import spaceBg2 from './assets/Images/space2-compressed.png'
+import contactBg from './assets/Images/contact2-compressed.jpg'
 
 const homePageTop = 0, 
 	aboutPageTop = 0.58, 
@@ -33,96 +35,31 @@ function scrollStopper(e) {
 	return false;
 }
 
-function holdTopVert(e) {
-	console.log('holding top vert')
-	e.preventDefault()
-	// e.stopPropagation()
-	// return false;
-
-	// const topEle = document.querySelector('.initial-vertical-scroll')
-	// topEle.scrollTop = topEle.scrollHeight - window.innerHeight
-}
-
-function onlyOverall(e) {
-	console.log('Allowing scroll on only overall div')
-	e.stopPropagation()
-}
-
-function vScrollStop(e) {
-	// console.log('vScrollStop');
-	var ele = document.querySelector('.initial-vertical-scroll')
-	console.log("Scrolled: ", window.innerHeight + ele.scrollTop)
-	if (window.innerHeight + ele.scrollTop >= ele.scrollHeight) {
-		console.log('Reached end');
-		document.querySelector('.mid-horizontal-scroll').addEventListener('wheel', scrollHorizontally, {passive: false})
-		e.preventDefault(); 
-		e.stopPropagation(); 
-		return false;
-	}
-	// else {
-	// 	document.querySelector('.mid-horizontal-scroll').removeEventListener('wheel', scrollHorizontally, {passive: true})
-	// }
-}
-
-async function stopScroll(e) {
-	const pageTop = 0;
-	document.querySelector('.overall-vertical-scroll').scrollTop = pageTop;
-};
-
-async function resumeScroll() {
-	// document.querySelector('body').removeEventListener('wheel', scrollStopper, {passive: true})
-	document.querySelector('body').removeEventListener('wheel', vScrollStop, {passive: true})
-	document.querySelector('.mid-horizontal-scroll').removeEventListener('wheel', scrollHorizontally, {passive: true})
-
-	// document.querySelector('body').classList.toggle('disable-scroll')
-}
-
 function scrollHorizontally(e) {
 	const topEle = document.querySelector('.initial-vertical-scroll')
 	const midEle = document.querySelector('.mid-horizontal-scroll')
-	const overallEle = document.querySelector('.overall-vertical-scroll')
 
 	e = window.event || e;
 	
 	var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-	// console.log("Delta: ", delta)
-
 	e.preventDefault();
-
-	// console.log("Delta: ", delta)
 	
 	if (midEle.scrollLeft === 0 && delta > 0) {
-		// console.log("Back to about")
 		topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 		midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
 		
 		topEle.style.overflowY = 'visible'
-		// overallEle.removeEventListener('wheel', stopScroll, {passive: false})
-
-		// document.querySelector('.App').removeEventListener('wheel', onlyOverall, {passive: false})
-
-		// midEle.scrollTop -= (delta * 100);
 	}
 	else if (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth && delta < 0) {
-		// midEle.scrollLeft -= (delta * 100);
-		// console.log("Reached end of projects")
-
 		topEle.classList.remove('toggleOverallScroll')
 		topEle.style.overflowY = 'hidden'
 
 		topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 		midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
-
-		// topEle.addEventListener('wheel', holdTopVert, {passive: false})
-		// midEle.addEventListener('wheel', holdTopVert, {passive: false})
-		// overallEle.addEventListener('wheel', onlyOverall, {passive: false})
-
-		// document.querySelector('.App').addEventListener('wheel', onlyOverall, {passive: false})
 	}
 	else {
 		var val = (window.innerWidth) / 10;
 		midEle.scrollLeft -= (delta * val);
-		// console.log("Scrolling through projects")
 	}
 }
 
@@ -132,9 +69,6 @@ async function initVerRefOnWheel(e) {
 	const topEle = document.querySelector('.initial-vertical-scroll')
 	const midEle = document.querySelector('.mid-horizontal-scroll')
 	const overallEle = document.querySelector('.overall-vertical-scroll')
-	
-	// console.log("Event: ", e)
-	// console.log(delta)
 
 	if (window.matchMedia("(hover: hover)").matches) {
 		e = window.event || e;
@@ -146,7 +80,6 @@ async function initVerRefOnWheel(e) {
 			&& (midEle.scrollLeft === 0) 
 			&& (delta < 0)
 		) {
-			// console.log("scrolling down to projects from skills")
 			topEle.addEventListener('wheel', scrollStopper, {passive: false})
 			midEle.addEventListener('wheel', scrollHorizontally, {passive: false})
 			topEle.classList.add('toggleOverallScroll')
@@ -159,20 +92,11 @@ async function initVerRefOnWheel(e) {
 			&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
 			&& (delta < 0)
 		) {
-			// console.log("scrolling to end of projects and scrolling downwards")
-			// midEle.scrollLeft -= (delta * 100);
 			topEle.classList.remove('toggleOverallScroll')
 			topEle.style.overflowY = 'hidden'
 
 			topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 			midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
-
-			// topEle.addEventListener('wheel', holdTopVert, {passive: false})
-			// midEle.addEventListener('wheel', holdTopVert, {passive: false})
-
-			// overallEle.addEventListener('wheel', onlyOverall, {passive: false})
-
-			// div.addEventListener('wheel', onlyOverall, true)
 		}
 
 		// When scrolling up to projects from contact
@@ -182,13 +106,6 @@ async function initVerRefOnWheel(e) {
 			&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
 			&& (delta > 0)
 		) {
-			// console.log("scrolling up to projects from contact")
-			// topEle.removeEventListener('wheel', holdTopVert, {passive: false})
-			// midEle.removeEventListener('wheel', holdTopVert, {passive: false})
-
-			// overallEle.removeEventListener('wheel', onlyOverall, {passive: false})
-			// div.removeEventListener('wheel', onlyOverall, true)
-
 			topEle.addEventListener('wheel', scrollStopper, {passive: false})
 			midEle.addEventListener('wheel', scrollHorizontally, {passive: false})
 			topEle.classList.add('toggleOverallScroll')
@@ -200,21 +117,16 @@ async function initVerRefOnWheel(e) {
 			&& (midEle.scrollLeft === 0) 
 			&& (delta > 0)
 		) {
-			// console.log("scolling to beginning of projects and scrolling upwards")
 			topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 			midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
 
-			// topEle.classList.remove('toggleInitialScroll')
 			topEle.style.overflowY = 'visible'
 		}
 	}
 	else {
-		console.log("topEle.scrollTop: ", topEle.scrollTop, " window.innerHeight: ", window.innerHeight, " topEle.scrollHeight: ", topEle.scrollHeight)
 		var currentY = e.touches[0].clientY
-		console.log("CurrentY: ", currentY, " ", currentY < lastY)
 		if (Math.ceil(topEle.scrollTop + window.innerHeight) >= Math.floor(topEle.scrollHeight) && currentY < lastY) {
 			topEle.style.overflowY = 'hidden'
-			console.log("Reached projects from skills")
 		}
 		else if (
 			Math.ceil(topEle.scrollTop + window.innerHeight) >= Math.floor(topEle.scrollHeight)
@@ -222,15 +134,10 @@ async function initVerRefOnWheel(e) {
 			&& overallEle.scrollTop === 0
 		) {
 			topEle.style.overflowY = 'visible'
-			console.log("Reached projects from contact")
 		}
 		lastY = currentY
 	}
 }
-
-// function topSectionOnWheel(e) {
-
-// }
 
 function App() {
 	const init_ver_ref = useRef()
@@ -238,12 +145,11 @@ function App() {
 	const overall_ver_ref = useRef()
 
 	let currentSection = 0;
-	let currentProject = 0, numOfProjects = 3;
+	let currentProject = 0, numOfProjects = 4;
 
 	const scrollToSection = async (to) => {
 		const topEle = document.querySelector('.initial-vertical-scroll')
 		const midEle = document.querySelector('.mid-horizontal-scroll')
-		const overallEle = document.querySelector('.overall-vertical-scroll')
 
 		if (to !== contactPageTop && init_ver_ref.current) {
 			if (currentSection === contactPageTop) {
@@ -259,8 +165,7 @@ function App() {
 				else {
 					topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 					midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
-	
-					// topEle.classList.remove('toggleInitialScroll')
+
 					topEle.style.overflowY = 'visible'
 				}
 			}
@@ -271,7 +176,6 @@ function App() {
 				topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 				midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
 
-				// topEle.classList.remove('toggleInitialScroll')
 				topEle.style.overflowY = 'visible'
 			}
 			else {
@@ -306,21 +210,16 @@ function App() {
 				currentProject = (currentProject - 1 + numOfProjects) % numOfProjects
 			}
 			else if (isNaN(to)) {
-				// console.log("Scrolling to next project, current project: ", currentProject)
 				currentProject = (currentProject + 1) % numOfProjects
-				// console.log("Scrolled to project: ", currentProject)
 			}
 			else {
-				// console.log("Scrolling to project ", to+1)
 				currentProject = to
 			}
-			// console.log(currentProject)
 			mid_hor_ref.current.scrollTo(currentProject)
 		}
 	}
 	
 	const scroll = async (to) => {
-		// console.log("Scrolling to ", to)
 		scrollToSection(to);
 
 		var topEle = document.querySelector('.initial-vertical-scroll')
@@ -334,8 +233,6 @@ function App() {
 			topEle.removeEventListener('wheel', scrollStopper, {passive: false})
 			midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
 		}
-		else {
-		}
 	}
 
 	const innerRef = useRef()
@@ -346,7 +243,6 @@ function App() {
 			div.addEventListener('wheel', initVerRefOnWheel, {passive: false})
 		}
 		else {
-			console.log("Touch device detected")
 			div.addEventListener('touchmove', initVerRefOnWheel, {passive: true})
 		}
 
@@ -363,9 +259,6 @@ function App() {
 	return (
 		<div className='App' style={{background: '#0B0C10'}}
 			ref={innerRef}
-			onWheel={(e) => {
-				console.log("Scroll detected on overall div")
-			}}
 		>
 			<Navbar 
 			onCl={[
@@ -386,13 +279,8 @@ function App() {
 				>
 					<Parallax 
 						className='initial-vertical-scroll toggleOverallScroll' 
-						// pages={3.834} 
 						pages={3}
 						ref={init_ver_ref}
-						// onClick={() => {
-						// 	console.log("Vertical Scroll: ", document.querySelector('.initial-vertical-scroll').scrollTop)
-						// 	console.log("Horizontal Scroll: ", document.querySelector('.mid-horizontal-scroll').scrollLeft)
-						// }}
 					>
 						{/* Intro */}
 						<ParallaxLayer 
@@ -400,12 +288,9 @@ function App() {
 						speed={1}
 						factor={0.9}
 						style={{
-							// backgroundColor: 'white',
 							display: 'flex',
 							flexDirection: 'column',
 							alignItems: 'center',
-							// // paddingTop: '40vh',
-							// justifyContent: 'center',
 						}}
 						>
 							<Intro />
@@ -417,7 +302,7 @@ function App() {
 							speed={0.69}
 							factor={1}
 						>
-							<img src={require('./assets/Images/Linkedin_PFP_Square.jpg')} alt="My beautiful face" id="myImage"></img>
+							<img src={require('./assets/Images/Linkedin_PFP_Square_1-compressed.jpg')} alt="My beautiful face" id="myImage"></img>
 							<div className='gradient-my-image'></div>
 						</ParallaxLayer>
 
@@ -427,11 +312,9 @@ function App() {
 							speed={0.55}
 							factor={1} 
 							style={{
-								// backgroundColor: 'white',
 								display: 'flex',
 								flexDirection: 'column',
 								alignItems: 'center',
-								// paddingTop: '40vh',
 								justifyContent: 'center',
 							}}
 						>
@@ -444,11 +327,9 @@ function App() {
 							speed={1}
 							factor={1}
 							style={{
-								// backgroundColor: 'white',
 								display: 'flex',
 								flexDirection: 'column',
 								alignItems: 'center',
-								// paddingTop: '40vh',
 								justifyContent: 'center',
 							}}
 						>
@@ -459,17 +340,11 @@ function App() {
 						<ParallaxLayer
 							offset={2}
 							speed={0.35}
-							style={{
-								// backgroundColor: 'white',
-							}}
 						>
 							<Parallax 
 								className='mid-horizontal-scroll' 
 								horizontal={true} 
-								pages={3}
-								style={{
-									// overflow: 'hidden',
-								}}
+								pages={numOfProjects}
 								ref={mid_hor_ref}
 							>
 								{/* Section Heading */}
@@ -478,7 +353,6 @@ function App() {
 									sticky={{start: 0, end: numOfProjects}}
 									style={{
 										color: '#66fcf1',
-										// color: '#0b0c10',
 										display: 'flex',
 										alignItems: 'center',
 										justifyContent: 'center',
@@ -504,7 +378,6 @@ function App() {
 										height: '100vh',
 										width: '100vw',
 										pointerEvents: 'none',
-										// marginLeft: 'auto',
 									}}
 								>
 									<div 
@@ -526,7 +399,6 @@ function App() {
 										height: '100vh',
 										width: '100vw',
 										pointerEvents: 'none',
-										// marginLeft: 'auto',
 									}}
 								>
 									<div 
@@ -543,6 +415,19 @@ function App() {
 									speed={0.2}
 								>
 									<Project 
+										projectTitle="Korporia"
+										projectImg={KorporiaImg}
+										projectLink={'https://github.com/CyanTarantula/KORPORIA'}
+										projectDescription="A food ordering application with the aim to integrate the small business owners into
+										the system and help them interact with their clients on a one on one basis. The website is built with React and Django."
+									/>
+								</ParallaxLayer>
+
+								<ParallaxLayer
+									offset={1}
+									speed={0.2}
+								>
+									<Project 
 										projectTitle="Fruits 360"
 										projectLink={'https://fruits-360.herokuapp.com/'}
 										projectDescription="The website demonstrates a CNN model predicting the image of a fruit taken from any angle. The model is trained on the Kaggle Fruits 360 Dataset. The website is built with React and Flask."
@@ -550,7 +435,7 @@ function App() {
 								</ParallaxLayer>
 
 								<ParallaxLayer
-									offset={1}
+									offset={2}
 									speed={0.2}
 								>
 									<Project 
@@ -563,7 +448,7 @@ function App() {
 								</ParallaxLayer>
 
 								<ParallaxLayer
-									offset={2}
+									offset={3}
 									speed={0.2}
 								>
 									<Project 
@@ -581,13 +466,6 @@ function App() {
 									speed={0}
 									factor={4.3}
 									style={{
-										// backgroundImage: `url(https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
-										// backgroundSize: 'cover',
-
-										// backgroundImage: `url(https://img.freepik.com/free-vector/dark-realistic-modern-striped-black-texture-futuristic-background-template-with-striped-line_535749-1439.jpg?size=626&ext=jpg)`,
-										// backgroundSize: '100vw 100vh',
-										// backgroundRepeat: 'repeat-x',
-										
 										backgroundImage: 
 											`linear-gradient(
 											rgba(11, 12, 16, 0.3), 
@@ -610,10 +488,6 @@ function App() {
 							// factor={2.199}
 							factor={2.5}
 							style={{
-								// backgroundImage: `url(https://i.pinimg.com/originals/21/5c/7f/215c7fdca6033092baa04b35c17466bd.gif)`,
-								// backgroundSize: '100vw',
-								// backgroundImage: `url(https://img.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg?t=st=1654369142~exp=1654369742~hmac=74dc7c66451ab64d5a46dfa1509336a1fe56d6b51620dbc97dd4f4de3052c5bb&w=900)`,
-								// backgroundRepeat: 'repeat-y',
 								backgroundImage: 
 									`linear-gradient(
 									rgba(11, 12, 16, 0.5), 
@@ -622,7 +496,6 @@ function App() {
 									+
 									`url(${spaceBg1})`,
 								backgroundRepeat: 'repeat',
-								// backgroundSize: '100vw',
 								zIndex: '-1',
 							}}
 						/>
@@ -632,16 +505,13 @@ function App() {
 				{/* Contact */}
 				<ParallaxLayer
 					className='end-section'
-					// offset={2.999}
 					offset={1} 
 					speed={0.2}
 					factor={1}
 					style={{
-						// backgroundColor: 'grey',
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
-						// paddingTop: '40vh',
 						justifyContent: 'center',
 					}}
 				>
@@ -653,9 +523,6 @@ function App() {
 					offset={1}
 					factor={1}
 					style={{
-						// backgroundImage: `url(https://images.pexels.com/photos/633409/pexels-photo-633409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
-						// backgroundSize: 'cover',
-						
 						backgroundImage: `
 							linear-gradient(
 							rgba(11, 12, 16, 0.7), 

@@ -1,10 +1,10 @@
 import './navbar.css'
 
-import homeIcon from '../assets/NavbarImages/home.png'
-import aboutIcon from '../assets/NavbarImages/About.png'
-import skillIcon from '../assets/NavbarImages/skills.png'
-import projectIcon from '../assets/NavbarImages/project.png'
-import contactIcon from '../assets/NavbarImages/Contact.png'
+import homeIcon from '../assets/NavbarImages/home-compressed.png'
+import aboutIcon from '../assets/NavbarImages/About-compressed.png'
+import skillIcon from '../assets/NavbarImages/skills-compressed.png'
+import projectIcon from '../assets/NavbarImages/project-compressed.png'
+import contactIcon from '../assets/NavbarImages/Contact-compressed.png'
 
 // interface ButtonProps {
 // 	doSomething: (params: any) => any;

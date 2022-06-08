@@ -20,7 +20,7 @@
 .initial-vertical-scroll::-webkit-scrollbar, 
 .mid-horizontal-scroll::-webkit-scrollbar,
 .overall-vertical-scroll::-webkit-scrollbar {
-  display: none
+  display: none;
 }
 
 /* ::-webkit-scrollbar {
