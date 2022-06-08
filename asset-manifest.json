@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.fdb6c08a.css",
-    "main.js": "/My-Portfolio/static/js/main.6fb8dde0.js",
+    "main.css": "/My-Portfolio/static/css/main.7cabcc83.css",
+    "main.js": "/My-Portfolio/static/js/main.a29204cf.js",
     "static/js/787.1297335f.chunk.js": "/My-Portfolio/static/js/787.1297335f.chunk.js",
     "static/media/Hangman Game v1.2 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Hangman Game v1.2 (By Yash Bhargava).49cd996d43284d058724.zip",
     "static/media/Titanium Vault v1.1 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Titanium Vault v1.1 (By Yash Bhargava).5b7a7618c28529913f4e.zip",
@@ -14,12 +14,12 @@
     "static/media/About-compressed.png": "/My-Portfolio/static/media/About-compressed.41405e1fef3b2da1b0b8.png",
     "static/media/contact2-compressed.jpg": "/My-Portfolio/static/media/contact2-compressed.8e82737b7d21731bf0f4.jpg",
     "index.html": "/My-Portfolio/index.html",
-    "main.fdb6c08a.css.map": "/My-Portfolio/static/css/main.fdb6c08a.css.map",
-    "main.6fb8dde0.js.map": "/My-Portfolio/static/js/main.6fb8dde0.js.map",
+    "main.7cabcc83.css.map": "/My-Portfolio/static/css/main.7cabcc83.css.map",
+    "main.a29204cf.js.map": "/My-Portfolio/static/js/main.a29204cf.js.map",
     "787.1297335f.chunk.js.map": "/My-Portfolio/static/js/787.1297335f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdb6c08a.css",
-    "static/js/main.6fb8dde0.js"
+    "static/css/main.7cabcc83.css",
+    "static/js/main.a29204cf.js"
   ]
 }
