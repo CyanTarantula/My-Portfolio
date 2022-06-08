@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/My-Portfolio/static/css/main.fdb6c08a.css",
+    "main.js": "/My-Portfolio/static/js/main.0191ee71.js",
+    "static/js/787.1297335f.chunk.js": "/My-Portfolio/static/js/787.1297335f.chunk.js",
+    "static/media/Hangman Game v1.2 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Hangman Game v1.2 (By Yash Bhargava).49cd996d43284d058724.zip",
+    "static/media/Titanium Vault v1.1 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Titanium Vault v1.1 (By Yash Bhargava).5b7a7618c28529913f4e.zip",
+    "static/media/Linkedin_PFP_Square.jpg": "/My-Portfolio/static/media/Linkedin_PFP_Square.ddb8108ace1e61ac74c4.jpg",
+    "static/media/space1.png": "/My-Portfolio/static/media/space1.b9ee5602decd8adde82c.png",
+    "static/media/space2.png": "/My-Portfolio/static/media/space2.14d5a004b78315d37fb7.png",
+    "static/media/Titanium_Vault_Icon.ico": "/My-Portfolio/static/media/Titanium_Vault_Icon.9c1d6feeb9ce42bc8ed5.ico",
+    "static/media/About.png": "/My-Portfolio/static/media/About.39e60c525f87f456e376.png",
+    "static/media/website.png": "/My-Portfolio/static/media/website.9202775af2d604162f0f.png",
+    "static/media/contact2.jpg": "/My-Portfolio/static/media/contact2.574af779f37b8f564447.jpg",
+    "static/media/skills.png": "/My-Portfolio/static/media/skills.ef7589c4eeee690cd708.png",
+    "static/media/Hangman_Game_Icon2.png": "/My-Portfolio/static/media/Hangman_Game_Icon2.9efb805d0609bf40d148.png",
+    "static/media/Contact.png": "/My-Portfolio/static/media/Contact.b9d124315401b4ce3e62.png",
+    "static/media/CSS3.png": "/My-Portfolio/static/media/CSS3.1a57e67ac1fd2ea84d64.png",
+    "static/media/js.png": "/My-Portfolio/static/media/js.fed8b3f68947aebb97eb.png",
+    "static/media/django-logo.png": "/My-Portfolio/static/media/django-logo.1561b91d7b75f3ca2814.png",
+    "static/media/project.png": "/My-Portfolio/static/media/project.a18155eade7f52c29e47.png",
+    "static/media/home.png": "/My-Portfolio/static/media/home.2de0ad33a713365572b3.png",
+    "index.html": "/My-Portfolio/index.html",
+    "main.fdb6c08a.css.map": "/My-Portfolio/static/css/main.fdb6c08a.css.map",
+    "main.0191ee71.js.map": "/My-Portfolio/static/js/main.0191ee71.js.map",
+    "787.1297335f.chunk.js.map": "/My-Portfolio/static/js/787.1297335f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdb6c08a.css",
+    "static/js/main.0191ee71.js"
+  ]
+}
