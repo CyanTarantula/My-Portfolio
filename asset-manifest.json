@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.0f9687fc.css",
+    "main.css": "/My-Portfolio/static/css/main.89469ef1.css",
     "main.js": "/My-Portfolio/static/js/main.49021664.js",
     "static/js/787.1297335f.chunk.js": "/My-Portfolio/static/js/787.1297335f.chunk.js",
     "static/media/Hangman Game v1.2 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Hangman Game v1.2 (By Yash Bhargava).49cd996d43284d058724.zip",
@@ -14,12 +14,12 @@
     "static/media/About-compressed.png": "/My-Portfolio/static/media/About-compressed.41405e1fef3b2da1b0b8.png",
     "static/media/contact2-compressed.jpg": "/My-Portfolio/static/media/contact2-compressed.8e82737b7d21731bf0f4.jpg",
     "index.html": "/My-Portfolio/index.html",
-    "main.0f9687fc.css.map": "/My-Portfolio/static/css/main.0f9687fc.css.map",
+    "main.89469ef1.css.map": "/My-Portfolio/static/css/main.89469ef1.css.map",
     "main.49021664.js.map": "/My-Portfolio/static/js/main.49021664.js.map",
     "787.1297335f.chunk.js.map": "/My-Portfolio/static/js/787.1297335f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f9687fc.css",
+    "static/css/main.89469ef1.css",
     "static/js/main.49021664.js"
   ]
 }
