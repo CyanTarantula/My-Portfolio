@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.045bb77f.css",
-    "main.js": "/My-Portfolio/static/js/main.527a8960.js",
-    "static/js/787.1297335f.chunk.js": "/My-Portfolio/static/js/787.1297335f.chunk.js",
-    "static/media/Hangman Game v1.2 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Hangman Game v1.2 (By Yash Bhargava).49cd996d43284d058724.zip",
-    "static/media/Titanium Vault v1.1 (By Yash Bhargava).zip": "/My-Portfolio/static/media/Titanium Vault v1.1 (By Yash Bhargava).5b7a7618c28529913f4e.zip",
-    "static/media/Linkedin_PFP_Square_1-compressed.jpg": "/My-Portfolio/static/media/Linkedin_PFP_Square_1-compressed.3d2a27d3c605b21a6105.jpg",
-    "static/media/space1-compressed.png": "/My-Portfolio/static/media/space1-compressed.3832516312ffe02fa639.png",
-    "static/media/space2-compressed.png": "/My-Portfolio/static/media/space2-compressed.1bdd208e8b06869f1222.png",
-    "static/media/python-compressed.png": "/My-Portfolio/static/media/python-compressed.45680a8358cfe65cc3ac.png",
-    "static/media/KorporiaLogo-compressed.jpg": "/My-Portfolio/static/media/KorporiaLogo-compressed.93851840bb864168927e.jpg",
-    "static/media/Titanium_Vault_Logo-compressed.jpg": "/My-Portfolio/static/media/Titanium_Vault_Logo-compressed.d5b0dbe3c8317855cd8f.jpg",
-    "static/media/About-compressed.png": "/My-Portfolio/static/media/About-compressed.41405e1fef3b2da1b0b8.png",
-    "static/media/contact2-compressed.jpg": "/My-Portfolio/static/media/contact2-compressed.8e82737b7d21731bf0f4.jpg",
-    "index.html": "/My-Portfolio/index.html",
-    "main.045bb77f.css.map": "/My-Portfolio/static/css/main.045bb77f.css.map",
-    "main.527a8960.js.map": "/My-Portfolio/static/js/main.527a8960.js.map",
-    "787.1297335f.chunk.js.map": "/My-Portfolio/static/js/787.1297335f.chunk.js.map"
+    "main.css": "/static/css/main.045bb77f.css",
+    "main.js": "/static/js/main.2ba62234.js",
+    "static/js/787.1297335f.chunk.js": "/static/js/787.1297335f.chunk.js",
+    "static/media/Hangman Game v1.2 (By Yash Bhargava).zip": "/static/media/Hangman Game v1.2 (By Yash Bhargava).49cd996d43284d058724.zip",
+    "static/media/Titanium Vault v1.1 (By Yash Bhargava).zip": "/static/media/Titanium Vault v1.1 (By Yash Bhargava).5b7a7618c28529913f4e.zip",
+    "static/media/Linkedin_PFP_Square_1-compressed.jpg": "/static/media/Linkedin_PFP_Square_1-compressed.3d2a27d3c605b21a6105.jpg",
+    "static/media/space1-compressed.png": "/static/media/space1-compressed.3832516312ffe02fa639.png",
+    "static/media/space2-compressed.png": "/static/media/space2-compressed.1bdd208e8b06869f1222.png",
+    "static/media/python-compressed.png": "/static/media/python-compressed.45680a8358cfe65cc3ac.png",
+    "static/media/KorporiaLogo-compressed.jpg": "/static/media/KorporiaLogo-compressed.93851840bb864168927e.jpg",
+    "static/media/Titanium_Vault_Logo-compressed.jpg": "/static/media/Titanium_Vault_Logo-compressed.d5b0dbe3c8317855cd8f.jpg",
+    "static/media/About-compressed.png": "/static/media/About-compressed.41405e1fef3b2da1b0b8.png",
+    "static/media/contact2-compressed.jpg": "/static/media/contact2-compressed.8e82737b7d21731bf0f4.jpg",
+    "index.html": "/index.html",
+    "main.045bb77f.css.map": "/static/css/main.045bb77f.css.map",
+    "main.2ba62234.js.map": "/static/js/main.2ba62234.js.map",
+    "787.1297335f.chunk.js.map": "/static/js/787.1297335f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.045bb77f.css",
-    "static/js/main.527a8960.js"
+    "static/js/main.2ba62234.js"
   ]
 }
