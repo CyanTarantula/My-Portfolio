@@ -28,7 +28,9 @@
 } */
 
 .project-nav-arrows {
-  display: none;
+  /* display: none; */
+  margin: 10px;
+  pointer-events: auto;
 }
 
 .arrow {
@@ -41,11 +43,13 @@
 }
 
 .right {
+  display: none;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 
 .left {
+  display: none;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }

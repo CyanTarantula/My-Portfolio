@@ -77,8 +77,8 @@
     /* top: 0; */
     margin-top: 10vh;
     margin-right: 10vw;
-    width: 80vh;
-    height: 80vh;
+    width: 80vmin;
+    height: 80vmin;
     clip-path: circle(70.0% at 70% 50%);
     background: linear-gradient(to right, hsla(176, 43%, 39%, 0.5) , hsla(0, 0%, 100%, 0));
 }
@@ -153,7 +153,7 @@
     .about {
         margin-top: calc(80vmin + 2 * 10px);
     }
-    #myImage {
+    #myImage .gradient-my-image {
         top: 0;
         height: 90vmin;
         margin-top: 10px;

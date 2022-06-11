@@ -73,6 +73,7 @@
     max-height: calc(100% - 2*5px - 2*10px - 25px - 15px);
     font-size: max(3vmin, 15px);
     color: #c5c6c7;
+    text-shadow: 2px 2px #0B0C10;
     margin: 5px 0;
     width: 80%;
 }

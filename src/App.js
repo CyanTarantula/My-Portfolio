@@ -28,6 +28,9 @@ const homePageTop = 0,
 	skillsPageTop = 1.25, 
 	projectPageTop = 2, 
 	contactPageTop = 1;
+	
+let currentSection = 0;
+let currentProject = 0, numOfProjects = 4;
 
 function scrollStopper(e) {
 	e.preventDefault(); 
@@ -50,7 +53,8 @@ function scrollHorizontally(e) {
 		
 		topEle.style.overflowY = 'visible'
 	}
-	else if (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth && delta < 0) {
+	else if (Math.ceil(window.innerWidth + midEle.scrollLeft) >= midEle.scrollWidth && delta < 0) {
+		// console.log("Here")
 		topEle.classList.remove('toggleOverallScroll')
 		topEle.style.overflowY = 'hidden'
 
@@ -58,8 +62,26 @@ function scrollHorizontally(e) {
 		midEle.removeEventListener('wheel', scrollHorizontally, {passive: false})
 	}
 	else {
+		// console.log("WTF", window.innerWidth, midEle.scrollWidth, midEle.scrollLeft)
 		var val = (window.innerWidth) / 10;
 		midEle.scrollLeft -= (delta * val);
+		
+		if (window.matchMedia("(hover: none)").matches) {
+			currentProject = Math.round((midEle.scrollLeft) / (window.innerWidth));
+			if (currentProject === 0) {
+				document.querySelector('.left').style.display = 'none'
+			}
+			else if (currentProject === numOfProjects-1) {
+				document.querySelector('.right').style.display = 'none'
+			}
+			
+			if (currentProject > 0) {
+				document.querySelector('.left').style.display = 'inline-block'
+			}
+			if (currentProject < numOfProjects - 1) {
+				document.querySelector('.right').style.display = 'inline-block'
+			}
+		}
 	}
 }
 
@@ -89,7 +111,7 @@ async function initVerRefOnWheel(e) {
 		if (
 			(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
 			&& (overallEle.scrollTop === 0)
-			&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
+			&& (Math.ceil(window.innerWidth + midEle.scrollLeft) >= midEle.scrollWidth) 
 			&& (delta < 0)
 		) {
 			topEle.classList.remove('toggleOverallScroll')
@@ -103,7 +125,7 @@ async function initVerRefOnWheel(e) {
 		if (
 			(topEle.scrollTop + window.innerHeight >= topEle.scrollHeight) 
 			&& (overallEle.scrollTop === 0)
-			&& (window.innerWidth + midEle.scrollLeft >= midEle.scrollWidth) 
+			&& (Math.ceil(window.innerWidth + midEle.scrollLeft) >= midEle.scrollWidth) 
 			&& (delta > 0)
 		) {
 			topEle.addEventListener('wheel', scrollStopper, {passive: false})
@@ -136,6 +158,24 @@ async function initVerRefOnWheel(e) {
 			topEle.style.overflowY = 'visible'
 		}
 		lastY = currentY
+
+		setTimeout(() => {
+			currentProject = Math.round((midEle.scrollLeft) / (window.innerWidth));
+			
+			if (currentProject === 0) {
+				document.querySelector('.left').style.display = 'none'
+			}
+			else if (currentProject === numOfProjects-1) {
+				document.querySelector('.right').style.display = 'none'
+			}
+			
+			if (currentProject > 0) {
+				document.querySelector('.left').style.display = 'inline-block'
+			}
+			if (currentProject < numOfProjects - 1) {
+				document.querySelector('.right').style.display = 'inline-block'
+			}
+		}, 50)
 	}
 }
 
@@ -143,9 +183,6 @@ function App() {
 	const init_ver_ref = useRef()
 	const mid_hor_ref = useRef()	
 	const overall_ver_ref = useRef()
-
-	let currentSection = 0;
-	let currentProject = 0, numOfProjects = 4;
 
 	const scrollToSection = async (to) => {
 		const topEle = document.querySelector('.initial-vertical-scroll')
@@ -216,6 +253,22 @@ function App() {
 				currentProject = to
 			}
 			mid_hor_ref.current.scrollTo(currentProject)
+			
+			if (window.matchMedia("(hover: none)").matches) {
+				if (currentProject === 0) {
+					document.querySelector('.left').style.display = 'none'
+				}
+				else if (currentProject === numOfProjects-1) {
+					document.querySelector('.right').style.display = 'none'
+				}
+				
+				if (currentProject > 0) {
+					document.querySelector('.left').style.display = 'inline-block'
+				}
+				if (currentProject < numOfProjects - 1) {
+					document.querySelector('.right').style.display = 'inline-block'
+				}
+			}
 		}
 	}
 	
@@ -375,9 +428,13 @@ function App() {
 										display: 'flex',
 										alignItems: 'center',
 										justifyContent: 'flex-end',
-										height: '100vh',
+										height: '80vh',
 										width: '100vw',
+										// marginLeft: 'auto',
 										pointerEvents: 'none',
+										// position: 'absolute',
+										// right: '0',
+										// top: '50%',
 									}}
 								>
 									<div 
@@ -396,7 +453,7 @@ function App() {
 										display: 'flex',
 										alignItems: 'center',
 										justifyContent: 'flex-start',
-										height: '100vh',
+										height: '80vh',
 										width: '100vw',
 										pointerEvents: 'none',
 									}}
