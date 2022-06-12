@@ -4,8 +4,8 @@ function Contact() {
     return (
         <div className='contact'>
             <div className='social-media-links'>
-                <a href='https://www.linkedin.com/in/yashbhargava02/' target='_blank' rel='noopener noreferrer' className='fa fa-facebook'> </a>
-                <a href='https://github.com/CyanTarantula' target='_blank' rel='noopener noreferrer' className='fa fa-instagram'> </a>
+                <a href='https://www.facebook.com/yashbhargava02' target='_blank' rel='noopener noreferrer' className='fa fa-facebook'> </a>
+                <a href='https://www.instagram.com/cyan_tarantula/' target='_blank' rel='noopener noreferrer' className='fa fa-instagram'> </a>
             </div>
 
             <div className='contact-title-mail'>
